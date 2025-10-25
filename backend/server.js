@@ -17,7 +17,7 @@ app.use("/api/products", productRouter); //router kullanimi icin kullanilir , ap
 //bundan once npm run build yaptım bu sayede frontend build edildi ve dist 
 if (process.env.NODE_ENV === "production") { // işlem sadece production modunda calisacak
   app.use(express.static(path.join(__dirname, "/frontend/dist"))); //frontedın buıld dosyalarını statık bı sekılde bıze sunar 
-  app.get("*", (req, res) => res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))); //api istekleri haric tüm istekler indeks.html sayfasına yonlendirilir
+  app.get("*", (req, res) => res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))); //api istekleri haric tüm istekler indeks.html sayfasına yonlendirilir
 //console.log(process.env.MONGO_URI);
 
 app.listen(PORT, () => {
